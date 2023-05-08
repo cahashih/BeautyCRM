@@ -1,0 +1,42 @@
+﻿<Window x:Class="LobovDiplom.Auth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LobovDiplom"
+        mc:Ignorable="d"
+        Title="Авторизация" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <Style x:Key="CompanyTitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="36"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#333333" BlurRadius="10" ShadowDepth="3"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Text" Value="Название компании"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+
+        </Style>
+        
+
+
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource CompanyTitle}" Text="Название компании" FontFamily="Bahnschrift Light Condensed"/>
+        <Frame Grid.Row="1" x:Name="AuthFrame" Width="200" Height="150"></Frame>
+    </Grid>
+</Window>
