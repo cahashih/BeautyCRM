@@ -8,51 +8,70 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginPage">
     <Page.Resources>
-        
-        <Style x:Key="LoginTextBoxStyle" TargetType="TextBox">
+
+
+        <Style x:Key="LoginTextBoxStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="Gray"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="5"/>
             <Setter Property="FontFamily" Value="Segoe UI"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Padding" Value="5,0,5,0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#B5B5B5"/>
+            <Setter Property="Background" Value="White"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Grid>
-                            <Border x:Name="border"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="5">
-                                <Grid>
-                                    <TextBlock x:Name="placeholder"
-                                       Text="Введите логин"
-                                       FontFamily="Segoe UI"
-                                       FontSize="14"
-                                       Foreground="Gray"
-                                       Margin="5,0,0,0"/>
-                                    <ScrollViewer x:Name="PART_ContentHost"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                          VerticalAlignment="Center"
-                                          HorizontalAlignment="Left"/>
-                                </Grid>
-                            </Border>
-                        </Grid>
+                        <Border CornerRadius="7"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                  Focusable="false"
+                                  HorizontalScrollBarVisibility="Hidden"
+                                  VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter TargetName="placeholder" Property="Visibility" Value="Collapsed"/>
+                                <Setter Property="BorderBrush" Value="#0078D7"/>
+                                <Setter Property="Foreground" Value="Black"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-
-
-
+        <Style x:Key="MaskedTextBoxStyle" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Padding" Value="5,0,5,0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#B5B5B5"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border CornerRadius="7"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                  Focusable="false"
+                                  HorizontalScrollBarVisibility="Hidden"
+                                  VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#0078D7"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
     </Page.Resources>
     <Grid>
@@ -61,7 +80,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
-        <TextBox TextAlignment="Center" Grid.Row="0" Style="{StaticResource LoginTextBoxStyle}"></TextBox>
+
+        <TextBox x:Name="LoginForm" TextChanged="LoginForm_TextChanged" TextAlignment="Center" Grid.Row="0" Style="{StaticResource LoginTextBoxStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Cascadia Code SemiLight" FontSize="22" ></TextBox>
+        <TextBlock Grid.Row="0" x:Name="LoginText" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cascadia Code SemiLight" FontSize="20" >Введите логин</TextBlock>
+        <PasswordBox x:Name="PasswordForm" PasswordChanged="PasswordForm_PasswordChanged" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource MaskedTextBoxStyle}" ></PasswordBox>
+        <TextBlock Grid.Row="1" x:Name="PasswordText" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cascadia Code SemiLight" FontSize="20" >Введите пароль</TextBlock>
     </Grid>
 </Page>

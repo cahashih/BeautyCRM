@@ -24,5 +24,29 @@ namespace LobovDiplom
         {
             InitializeComponent();
         }
+
+        private void LoginForm_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (LoginForm.Text == "")
+            {
+                LoginText.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                LoginText.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void PasswordForm_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (PasswordForm.Password == "")
+            {
+                LoginText.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                LoginText.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }
