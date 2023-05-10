@@ -16,15 +16,14 @@ using System.Windows.Shapes;
 namespace LobovDiplom
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для Register.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class Register : Page
     {
-        public LoginPage()
+        public Register()
         {
             InitializeComponent();
         }
-
         private void LoginForm_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (LoginForm.Text == "" && !LoginForm.Focusable)
@@ -48,17 +47,21 @@ namespace LobovDiplom
                 PasswordText.Visibility = Visibility.Hidden;
             }
         }
+        private void PasswordForm_PasswordChangedRe(object sender, RoutedEventArgs e)
+        {
+            if (PasswordFormRe.Password == "")
+            {
+                PasswordTextRe.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PasswordTextRe.Visibility = Visibility.Hidden;
+            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Manager.AuthFrame.Navigate(new Register());
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            MainWindow win = new MainWindow();
-            win.Show();
-            Window.GetWindow(this).Close();
+            Manager.AuthFrame.Navigate(new LoginPage());
         }
     }
 }

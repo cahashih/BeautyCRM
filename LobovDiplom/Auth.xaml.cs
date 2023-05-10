@@ -23,8 +23,9 @@ namespace LobovDiplom
         {
             InitializeComponent();
             AuthFrame.Navigate(new LoginPage());
-            AuthFrame = Manager.AuthFrame;
-            
+            Manager.AuthFrame = AuthFrame;
+
+
         }
     }
 }

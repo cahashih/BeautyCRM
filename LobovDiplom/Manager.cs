@@ -10,5 +10,6 @@ namespace LobovDiplom
     internal class Manager
     {
         public static Frame AuthFrame { get; set; }
+        public static Frame MainFrame { get; set; }
     }
 }
