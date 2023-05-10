@@ -36,7 +36,14 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource CompanyTitle}" Text="Название компании" FontFamily="Bahnschrift Light Condensed"/>
-        <Frame Grid.Row="1" x:Name="AuthFrame" Width="200" Height="150"></Frame>
+        <TextBlock Style="{StaticResource CompanyTitle}" Text="BeautyCRM" FontFamily="JasmineUPC" FontWeight="Bold">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#19FD00FF"/>
+                    <GradientStop Color="#FF003EFF" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Frame Grid.Row="1" x:Name="AuthFrame" Width="250" Height="150" ></Frame>
     </Grid>
 </Window>

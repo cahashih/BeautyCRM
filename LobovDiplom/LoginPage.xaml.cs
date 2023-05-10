@@ -27,7 +27,7 @@ namespace LobovDiplom
 
         private void LoginForm_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (LoginForm.Text == "")
+            if (LoginForm.Text == "" && !LoginForm.Focusa)
             {
                 LoginText.Visibility = Visibility.Visible;
             }
@@ -41,11 +41,11 @@ namespace LobovDiplom
         {
             if (PasswordForm.Password == "")
             {
-                LoginText.Visibility = Visibility.Visible;
+                PasswordText.Visibility = Visibility.Visible;
             }
             else
             {
-                LoginText.Visibility = Visibility.Hidden;
+                PasswordText.Visibility = Visibility.Hidden;
             }
         }
     }
