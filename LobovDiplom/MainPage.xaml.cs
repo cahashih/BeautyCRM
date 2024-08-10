@@ -27,22 +27,22 @@ namespace LobovDiplom
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new ViewService());
+            Manager.MainFrame.Navigate(new ViewService(1));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new ViewService());
+            Manager.MainFrame.Navigate(new ViewService(2));
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new ViewService());
+            Manager.MainFrame.Navigate(new ViewService(3));
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new ViewService());
+            Manager.MainFrame.Navigate(new ViewService(4));
         }
     }
 }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{24F77232-D3D5-4278-8D45-A40C143D9FC5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LobovDiplom</RootNamespace>
-    <AssemblyName>LobovDiplom</AssemblyName>
+    <RootNamespace>BeautyCRM</RootNamespace>
+    <AssemblyName>BeautyCRM</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -38,8 +38,17 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -52,6 +61,21 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -61,8 +85,14 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderInfo.xaml.cs">
+      <DependentUpon>OrderInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TimeOrder.xaml.cs">
+      <DependentUpon>TimeOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewService.xaml.cs">
       <DependentUpon>ViewService.xaml</DependentUpon>
@@ -97,7 +127,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OrderInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TimeOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,6 +163,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -165,6 +204,44 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Rectangle_5Ep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\imaging %281%29.jpg" />
+    <Resource Include="Resource\imaging %282%29.jpg" />
+    <Resource Include="Resource\imaging %283%29.jpg" />
+    <Resource Include="Resource\imaging %284%29.jpg" />
+    <Resource Include="Resource\imaging %285%29.jpg" />
+    <Resource Include="Resource\imaging %286%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\serviceone.jpg" />
+    <Resource Include="Resource\service %2810%29.jpg" />
+    <Resource Include="Resource\service %2811%29.jpg" />
+    <Resource Include="Resource\service %2812%29.jpg" />
+    <Resource Include="Resource\service %282%29.jpg" />
+    <Resource Include="Resource\service %283%29.jpg" />
+    <Resource Include="Resource\service %284%29.jpg" />
+    <Resource Include="Resource\service %285%29.jpg" />
+    <Resource Include="Resource\service %286%29.jpg" />
+    <Resource Include="Resource\service %287%29.jpg" />
+    <Resource Include="Resource\service %288%29.jpg" />
+    <Resource Include="Resource\service %289%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\service %2866%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\epil.jpg" />
+    <Resource Include="Resource\epil %281%29.jpg" />
+    <Resource Include="Resource\epil %282%29.jpg" />
+    <Resource Include="Resource\spa %281%29.jpg" />
+    <Resource Include="Resource\spa %282%29.jpg" />
+    <Resource Include="Resource\spa %283%29.jpg" />
+    <Resource Include="Resource\spa %284%29.jpg" />
+    <Resource Include="Resource\spa %285%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

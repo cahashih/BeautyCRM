@@ -6,37 +6,44 @@
       xmlns:local="clr-namespace:LobovDiplom"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ViewService">
+      Title="ViewService"
+    >
+    <Page.Resources>
+        <Style x:Key="SignUpButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF007ACC"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10, 5"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF00568C"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#FF00334F"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel x:Name="myGrid" Orientation="Vertical">
-        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5" Padding="5">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <!-- Картинка -->
-                <Image Width="100" Height="100"/>
-
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <!-- Название -->
-                    <TextBlock Grid.Row="0" Text="Название услуги" FontSize="20" FontWeight="Bold" Margin="10 0 0 0"/>
-
-                    <!-- Описание -->
-                    <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Описание услуги" Margin="10 5 0 0"/>
-
-                    <!-- Цена -->
-                    <TextBlock Grid.Row="0" Text="1000 руб." FontSize="18" FontWeight="Bold" Margin="10 5 0 0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <Button Grid.Row="2" HorizontalAlignment="Right" >Записаться</Button>
-                </Grid>
-            </Grid>
-        </Border>
+        
 
     </StackPanel>
     </ScrollViewer>

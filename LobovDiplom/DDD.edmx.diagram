@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="33ec7f40536b40ea87700ee638966d77" Name="Diagram1">
+        <EntityTypeShape EntityType="lobovModel.Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="lobovModel.ServiceCategory" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="lobovModel.Service" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="lobovModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="lobovModel.User" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="lobovModel.FK__Orders__ServiceI__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="lobovModel.FK__Orders__UserId__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="lobovModel.FK__Services__Catego__45F365D3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

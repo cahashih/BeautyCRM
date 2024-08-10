@@ -36,7 +36,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
-        <Button Click="Button_Click_3" Grid.Column="0" Style="{StaticResource CardButtonStyle}">
+        <Button Click="Button_Click" Grid.Column="0" Style="{StaticResource CardButtonStyle}">
             <Grid>
                 
                 <Image Source="/Rectangle_2im.png" Stretch="Uniform" Width="180" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,0" StretchDirection="Both" />
@@ -45,7 +45,7 @@
 
             </Grid>
         </Button>
-        <Button Click="Button_Click_3" Grid.Column="1" Style="{StaticResource CardButtonStyle}">
+        <Button Click="Button_Click_1" Grid.Column="1" Style="{StaticResource CardButtonStyle}">
             <Grid>
 
                 <Image Source="/Rectangle_4SPA.png" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,0" />
@@ -54,7 +54,7 @@
 
             </Grid>
         </Button>
-        <Button Click="Button_Click_3" Grid.Column="3" Style="{StaticResource CardButtonStyle}">
+        <Button Click="Button_Click_2" Grid.Column="3" Style="{StaticResource CardButtonStyle}">
             <Grid>
 
                 <Image Source="/Rectangle_3Cosm.png"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,0" />
